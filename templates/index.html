@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Fake News Detector</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<div class="header">
+
+    <div class="logo">
+        AI NEWS VERIFICATION
+    </div>
+
+    <h1>
+        Fake News <span class="highlight">Detector</span>
+    </h1>
+
+    <p class="subtitle">
+        Analyze news articles using machine learning
+        and determine whether the information appears
+        real or fake.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <h2 class="card-title">
+        Analyze a News Article
+    </h2>
+
+    <p class="card-description">
+        Enter the headline and complete article below.
+    </p>
+
+
+    <form method="POST">
+
+        <div class="form-group">
+
+            <label for="title">
+                News Headline
+            </label>
+
+            <input
+                id="title"
+                type="text"
+                name="title"
+                placeholder="Enter news headline..."
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="text">
+                Article Content
+            </label>
+
+            <textarea
+                id="text"
+                name="text"
+                placeholder="Enter or paste the news article here..."
+                required
+            ></textarea>
+
+        </div>
+
+
+        <button type="submit">
+            🔍 Check News
+        </button>
+
+    </form>
+
+
+    {% if prediction %}
+
+    <div class="result">
+
+        <div class="result-label">
+            ANALYSIS RESULT
+        </div>
+
+        <h2>
+            {{ prediction }}
+        </h2>
+
+        <p class="confidence-text">
+            Confidence: {{ confidence }}%
+        </p>
+
+        <div class="progress-bar">
+
+            <div
+                class="progress"
+                style="width: {{ confidence }}%;">
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+
+<div class="features">
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            ⚡
+        </div>
+
+        <h3>
+            Fast Analysis
+        </h3>
+
+        <p>
+            Get results quickly.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            🤖
+        </div>
+
+        <h3>
+            Machine Learning
+        </h3>
+
+        <p>
+            AI-based news detection.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            🔒
+        </div>
+
+        <h3>
+            Simple & Secure
+        </h3>
+
+        <p>
+            Easy to use interface.
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="footer">
+    Fake News Detection System • 2026
+</div>
+```
+
+</div>
+
+</body>
+
+</html>
