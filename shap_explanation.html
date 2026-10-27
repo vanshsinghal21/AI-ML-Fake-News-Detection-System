@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SatyaCheck - SHAP Explanation</title>
+<style>
+    body {
+        margin: 0;
+        padding: 24px;
+        font-family: Arial, "Noto Sans Devanagari", sans-serif;
+        color: #222;
+        background: #f5f7fb;
+    }
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 28px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 3px 18px rgba(0,0,0,0.08);
+    }
+    h1 { margin-top: 0; font-size: 26px; }
+    .prediction {
+        padding: 16px;
+        margin: 20px 0;
+        background: #f0f4ff;
+        border-radius: 8px;
+    }
+    .article {
+        line-height: 1.9;
+        overflow-wrap: anywhere;
+    }
+    .note {
+        color: #555;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .visualization {
+        width: 100%;
+        overflow-x: auto;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>SatyaCheck — SHAP Explanation</h1>
+
+    <div class="prediction">
+        <strong>Model prediction:</strong>
+        REAL NEWS<br>
+        <strong>Model confidence:</strong>
+        99.27%
+    </div>
+
+    <h2>Analyzed news text</h2>
+    <p class="article">सरकार ने आज नई शिक्षा नीति की घोषणा की।</p>
+
+    <h2>Word-level explanation</h2>
+    <p class="note">
+        SHAP shows how words influence the selected model output.
+        Positive and negative contributions are relative to the selected
+        class and baseline. This explanation does not verify whether the
+        news is factually true.
+    </p>
+
+    <div class="visualization">
+        <svg width="100%" height="80px"><line x1="0" y1="33" x2="100%" y2="33" style="stroke:rgb(150,150,150);stroke-width:1" /><line x1="57.18225989877235%" y1="33" x2="57.18225989877235%" y2="37" style="stroke:rgb(150,150,150);stroke-width:1" /><text x="57.18225989877235%" y="27" font-size="12px" fill="rgb(120,120,120)" dominant-baseline="bottom" text-anchor="middle">0.8</text><line x1="39.416634249289146%" y1="33" x2="39.416634249289146%" y2="37" style="stroke:rgb(150,150,150);stroke-width:1" /><text x="39.416634249289146%" y="27" font-size="12px" fill="rgb(120,120,120)" dominant-baseline="bottom" text-anchor="middle">0.7</text><line x1="21.651008599805937%" y1="33" x2="21.651008599805937%" y2="37" style="stroke:rgb(150,150,150);stroke-width:1" /><text x="21.651008599805937%" y="27" font-size="12px" fill="rgb(120,120,120)" dominant-baseline="bottom" text-anchor="middle">0.6</text><line x1="74.94788554825557%" y1="33" x2="74.94788554825557%" y2="37" style="stroke:rgb(150,150,150);stroke-width:1" /><text x="74.94788554825557%" y="27" font-size="12px" fill="rgb(120,120,120)" dominant-baseline="bottom" text-anchor="middle">0.9</text><line x1="92.7135111977388%" y1="33" x2="92.7135111977388%" y2="37" style="stroke:rgb(150,150,150);stroke-width:1" /><text x="92.7135111977388%" y="27" font-size="12px" fill="rgb(120,120,120)" dominant-baseline="bottom" text-anchor="middle">1</text><line x1="8.585901335378725%" y1="33" x2="8.585901335378725%" y2="37" style="stroke:rgb(150,150,150);stroke-width:1" /><text x="8.585901335378725%" y="27" font-size="13px" style="stroke:#ffffff;stroke-width:8px;" fill="rgb(255,255,255)" dominant-baseline="bottom" text-anchor="middle">0.526459</text><text x="8.585901335378725%" y="27" font-size="12px" fill="rgb(120,120,120)" dominant-baseline="bottom" text-anchor="middle">0.526459</text><text x="8.585901335378725%" y="10" font-size="12px" fill="rgb(120,120,120)" dominant-baseline="bottom" text-anchor="middle">base value</text><line x1="91.4140968880587%" y1="33" x2="91.4140968880587%" y2="37" style="stroke:rgb(150,150,150);stroke-width:1" /><text x="91.4140968880587%" y="27" font-size="13px" style="stroke:#ffffff;stroke-width:8px;" font-weight="bold" fill="rgb(255,255,255)" dominant-baseline="bottom" text-anchor="middle">0.992686</text><text x="91.4140968880587%" y="27" font-size="13px" font-weight="bold" fill="rgb(0,0,0)" dominant-baseline="bottom" text-anchor="middle">0.992686</text><text x="91.4140968880587%" y="10" font-size="12px" fill="rgb(120,120,120)" dominant-baseline="bottom" text-anchor="middle">f<tspan baseline-shift="sub" font-size="8px">REAL NEWS</tspan>(inputs)</text><rect x="8.333333185286449%" width="83.08076370277223%" y="40" height="18" style="fill:rgb(255.0, 0.0, 81.08083606031792); stroke-width:0; stroke:rgb(0,0,0)" /><line x1="62.86121808208845%" x2="91.4140968880587%" y1="60" y2="60" id="_fb_ushvzlqmsjqytmzldeph_ind_2" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2; opacity: 0"/><text x="77.13765748507358%" y="71" font-size="12px" id="_fs_ushvzlqmsjqytmzldeph_ind_2" fill="rgb(255.0, 0.0, 81.08083606031792)" style="opacity: 0" dominant-baseline="middle" text-anchor="middle">0.161</text><svg x="62.86121808208845%" y="40" height="20" width="28.552878805970245%">  <svg x="0" y="0" width="100%" height="100%">    <text x="50%" y="9" font-size="12px" fill="rgb(255,255,255)" dominant-baseline="middle" text-anchor="middle">आज</text>  </svg></svg><line x1="46.15908312885345%" x2="62.86121808208845%" y1="60" y2="60" id="_fb_ushvzlqmsjqytmzldeph_ind_1" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2; opacity: 0"/><text x="54.510150605470955%" y="71" font-size="12px" id="_fs_ushvzlqmsjqytmzldeph_ind_1" fill="rgb(255.0, 0.0, 81.08083606031792)" style="opacity: 0" dominant-baseline="middle" text-anchor="middle">0.094</text><svg x="46.15908312885345%" y="40" height="20" width="16.702134953234996%">  <svg x="0" y="0" width="100%" height="100%">    <text x="50%" y="9" font-size="12px" fill="rgb(255,255,255)" dominant-baseline="middle" text-anchor="middle">ने</text>  </svg></svg><line x1="33.96807320825114%" x2="46.15908312885345%" y1="60" y2="60" id="_fb_ushvzlqmsjqytmzldeph_ind_4" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2; opacity: 0"/><text x="40.0635781685523%" y="71" font-size="12px" id="_fs_ushvzlqmsjqytmzldeph_ind_4" fill="rgb(255.0, 0.0, 81.08083606031792)" style="opacity: 0" dominant-baseline="middle" text-anchor="middle">0.069</text><svg x="33.96807320825114%" y="40" height="20" width="12.191009920602312%">  <svg x="0" y="0" width="100%" height="100%">    <text x="50%" y="9" font-size="12px" fill="rgb(255,255,255)" dominant-baseline="middle" text-anchor="middle">नीति की</text>  </svg></svg><line x1="23.424500208825314%" x2="33.96807320825114%" y1="60" y2="60" id="_fb_ushvzlqmsjqytmzldeph_ind_3" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2; opacity: 0"/><text x="28.696286708538228%" y="71" font-size="12px" id="_fs_ushvzlqmsjqytmzldeph_ind_3" fill="rgb(255.0, 0.0, 81.08083606031792)" style="opacity: 0" dominant-baseline="middle" text-anchor="middle">0.059</text><svg x="23.424500208825314%" y="40" height="20" width="10.543572999425827%">  <svg x="0" y="0" width="100%" height="100%">    <text x="50%" y="9" font-size="12px" fill="rgb(255,255,255)" dominant-baseline="middle" text-anchor="middle">नई शिक्षा</text>  </svg></svg><line x1="15.58210381904119%" x2="23.424500208825314%" y1="60" y2="60" id="_fb_ushvzlqmsjqytmzldeph_ind_5" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2; opacity: 0"/><text x="19.50330201393325%" y="71" font-size="12px" id="_fs_ushvzlqmsjqytmzldeph_ind_5" fill="rgb(255.0, 0.0, 81.08083606031792)" style="opacity: 0" dominant-baseline="middle" text-anchor="middle">0.044</text><svg x="15.58210381904119%" y="40" height="20" width="7.842396389784124%">  <svg x="0" y="0" width="100%" height="100%">    <text x="50%" y="9" font-size="12px" fill="rgb(255,255,255)" dominant-baseline="middle" text-anchor="middle">घोषणा की</text>  </svg></svg><line x1="8.333333185286449%" x2="15.58210381904119%" y1="60" y2="60" id="_fb_ushvzlqmsjqytmzldeph_ind_0" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2; opacity: 0"/><text x="11.95771850216382%" y="71" font-size="12px" id="_fs_ushvzlqmsjqytmzldeph_ind_0" fill="rgb(255.0, 0.0, 81.08083606031792)" style="opacity: 0" dominant-baseline="middle" text-anchor="middle">0.041</text><svg x="8.333333185286449%" y="40" height="20" width="7.2487706337547415%">  <svg x="0" y="0" width="100%" height="100%">    <text x="50%" y="9" font-size="12px" fill="rgb(255,255,255)" dominant-baseline="middle" text-anchor="middle">सरकार</text>  </svg></svg><g transform="translate(0,0)">  <svg x="62.86121808208845%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(2,0)">  <svg x="62.86121808208845%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(4,0)">  <svg x="62.86121808208845%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(6,0)">  <svg x="62.86121808208845%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-8,0)">  <svg x="62.86121808208845%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-6,0)">  <svg x="62.86121808208845%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-4,0)">  <svg x="62.86121808208845%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-2,0)">  <svg x="62.86121808208845%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(0,0)">  <svg x="46.15908312885345%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(2,0)">  <svg x="46.15908312885345%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(4,0)">  <svg x="46.15908312885345%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(6,0)">  <svg x="46.15908312885345%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-8,0)">  <svg x="46.15908312885345%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-6,0)">  <svg x="46.15908312885345%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-4,0)">  <svg x="46.15908312885345%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-2,0)">  <svg x="46.15908312885345%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(0,0)">  <svg x="33.96807320825114%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(2,0)">  <svg x="33.96807320825114%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(4,0)">  <svg x="33.96807320825114%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(6,0)">  <svg x="33.96807320825114%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-8,0)">  <svg x="33.96807320825114%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-6,0)">  <svg x="33.96807320825114%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-4,0)">  <svg x="33.96807320825114%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-2,0)">  <svg x="33.96807320825114%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(0,0)">  <svg x="23.424500208825314%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(2,0)">  <svg x="23.424500208825314%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(4,0)">  <svg x="23.424500208825314%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(6,0)">  <svg x="23.424500208825314%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-8,0)">  <svg x="23.424500208825314%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-6,0)">  <svg x="23.424500208825314%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-4,0)">  <svg x="23.424500208825314%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-2,0)">  <svg x="23.424500208825314%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(0,0)">  <svg x="15.58210381904119%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(2,0)">  <svg x="15.58210381904119%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(4,0)">  <svg x="15.58210381904119%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(6,0)">  <svg x="15.58210381904119%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-8,0)">  <svg x="15.58210381904119%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-6,0)">  <svg x="15.58210381904119%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-4,0)">  <svg x="15.58210381904119%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><g transform="translate(-2,0)">  <svg x="15.58210381904119%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255.0, 0.0, 81.08083606031792);stroke-width:2" />  </svg></g><rect transform="translate(-8,0)" x="91.4140968880587%" y="40" width="8" height="18" style="fill:rgb(255.0, 0.0, 81.08083606031792)"/><g transform="translate(-11.5,0)">  <svg x="8.333333185286449%" y="40" height="18" overflow="visible" width="30">    <path d="M 10 -9 l 6 18 L 10 25 L 0 25 L 0 -9" fill="#ffffff" style="stroke:rgb(255,255,255);stroke-width:2" />  </svg></g><g transform="translate(-1.5,0)">  <svg x="91.4140968880587%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255, 195, 213);stroke-width:2" />  </svg></g><rect x="62.86121808208845%" y="40" height="20" width="28.552878805970245%"      onmouseover="document.getElementById('_tp_ushvzlqmsjqytmzldeph_ind_2').style.textDecoration = 'underline';document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_2').style.opacity = 1;document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_2').style.opacity = 1;"      onmouseout="document.getElementById('_tp_ushvzlqmsjqytmzldeph_ind_2').style.textDecoration = 'none';document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_2').style.opacity = 0;document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_2').style.opacity = 0;" style="fill:rgb(0,0,0,0)" /><g transform="translate(-1.5,0)">  <svg x="62.86121808208845%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255, 195, 213);stroke-width:2" />  </svg></g><rect x="46.15908312885345%" y="40" height="20" width="16.702134953234996%"      onmouseover="document.getElementById('_tp_ushvzlqmsjqytmzldeph_ind_1').style.textDecoration = 'underline';document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_1').style.opacity = 1;document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_1').style.opacity = 1;"      onmouseout="document.getElementById('_tp_ushvzlqmsjqytmzldeph_ind_1').style.textDecoration = 'none';document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_1').style.opacity = 0;document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_1').style.opacity = 0;" style="fill:rgb(0,0,0,0)" /><g transform="translate(-1.5,0)">  <svg x="46.15908312885345%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255, 195, 213);stroke-width:2" />  </svg></g><rect x="33.96807320825114%" y="40" height="20" width="12.191009920602312%"      onmouseover="document.getElementById('_tp_ushvzlqmsjqytmzldeph_ind_4').style.textDecoration = 'underline';document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_4').style.opacity = 1;document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_4').style.opacity = 1;"      onmouseout="document.getElementById('_tp_ushvzlqmsjqytmzldeph_ind_4').style.textDecoration = 'none';document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_4').style.opacity = 0;document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_4').style.opacity = 0;" style="fill:rgb(0,0,0,0)" /><g transform="translate(-1.5,0)">  <svg x="33.96807320825114%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255, 195, 213);stroke-width:2" />  </svg></g><rect x="23.424500208825314%" y="40" height="20" width="10.543572999425827%"      onmouseover="document.getElementById('_tp_ushvzlqmsjqytmzldeph_ind_3').style.textDecoration = 'underline';document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_3').style.opacity = 1;document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_3').style.opacity = 1;"      onmouseout="document.getElementById('_tp_ushvzlqmsjqytmzldeph_ind_3').style.textDecoration = 'none';document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_3').style.opacity = 0;document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_3').style.opacity = 0;" style="fill:rgb(0,0,0,0)" /><g transform="translate(-1.5,0)">  <svg x="23.424500208825314%" y="40" height="18" overflow="visible" width="30">    <path d="M 0 -9 l 6 18 L 0 25" fill="none" style="stroke:rgb(255, 195, 213);stroke-width:2" />  </svg></g><rect x="15.58210381904119%" y="40" height="20" width="7.842396389784124%"      onmouseover="document.getElementById('_tp_ushvzlqmsjqytmzldeph_ind_5').style.textDecoration = 'underline';document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_5').style.opacity = 1;document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_5').style.opacity = 1;"      onmouseout="document.getElementById('_tp_ushvzlqmsjqytmzldeph_ind_5').style.textDecoration = 'none';document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_5').style.opacity = 0;document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_5').style.opacity = 0;" style="fill:rgb(0,0,0,0)" /><rect x="8.333333185286449%" y="40" height="20" width="7.2487706337547415%"      onmouseover="document.getElementById('_tp_ushvzlqmsjqytmzldeph_ind_0').style.textDecoration = 'underline';document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_0').style.opacity = 1;document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_0').style.opacity = 1;"      onmouseout="document.getElementById('_tp_ushvzlqmsjqytmzldeph_ind_0').style.textDecoration = 'none';document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_0').style.opacity = 0;document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_0').style.opacity = 0;" style="fill:rgb(0,0,0,0)" /><rect x="91.4140968880587%" width="0.25256815009227696%" y="40" height="18" style="fill:rgb(0.0, 138.56128015770724, 250.76166088685727); stroke-width:0; stroke:rgb(0,0,0)" /><line x1="91.4140968880587%" x2="91.66666503815097%" y1="60" y2="60" id="_fb_ushvzlqmsjqytmzldeph_ind_6" style="stroke:rgb(0.0, 138.56128015770724, 250.76166088685727);stroke-width:2; opacity: 0"/><text x="91.54038096310484%" y="71" font-size="12px" fill="rgb(0.0, 138.56128015770724, 250.76166088685727)" id="_fs_ushvzlqmsjqytmzldeph_ind_6" style="opacity: 0" dominant-baseline="middle" text-anchor="middle">-0.001</text><svg x="91.4140968880587%" y="40" height="20" width="0.25256815009227296%">  <svg x="0" y="0" width="100%" height="100%">    <text x="50%" y="9" font-size="12px" fill="rgb(255,255,255)" dominant-baseline="middle" text-anchor="middle">।</text>  </svg></svg><rect transform="translate(0,0)" x="91.4140968880587%" y="40" width="8" height="18" style="fill:rgb(0.0, 138.56128015770724, 250.76166088685727)"/><g transform="translate(-6.0,0)">  <svg x="91.66666503815097%" y="40" height="18" overflow="visible" width="30">    <path d="M 8 -9 l -6 18 L 8 25 L 20 25 L 20 -9" fill="#ffffff" style="stroke:rgb(255,255,255);stroke-width:2" />  </svg></g><rect x="91.4140968880587%" y="40" height="20" width="0.25256815009227296%"      onmouseover="document.getElementById('_tp_ushvzlqmsjqytmzldeph_ind_6').style.textDecoration = 'underline';document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_6').style.opacity = 1;document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_6').style.opacity = 1;"      onmouseout="document.getElementById('_tp_ushvzlqmsjqytmzldeph_ind_6').style.textDecoration = 'none';document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_6').style.opacity = 0;document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_6').style.opacity = 0;" style="fill:rgb(0,0,0,0)" /></svg><div align='center'><div style="color: rgb(120,120,120); font-size: 12px; margin-top: -15px;">inputs</div><div style='display: inline; text-align: center;'
+    ><div style='display: none; color: #999; padding-top: 0px; font-size: 12px;'>0.041 / 2</div
+        ><div id='_tp_ushvzlqmsjqytmzldeph_ind_0'
+            style='display: inline; background: rgba(255.0, 13.0, 87.0, 0.2511388393741335); border-radius: 3px; padding: 0px'
+            onclick="
+            if (this.previousSibling.style.display == 'none') {
+                this.previousSibling.style.display = 'block';
+                this.parentNode.style.display = 'inline-block';
+            } else {
+                this.previousSibling.style.display = 'none';
+                this.parentNode.style.display = 'inline';
+            }"
+            onmouseover="document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_0').style.opacity = 1; document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_0').style.opacity = 1;"
+            onmouseout="document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_0').style.opacity = 0; document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_0').style.opacity = 0;"
+        >सरकार </div></div><div style='display: inline; text-align: center;'
+    ><div style='display: none; color: #999; padding-top: 0px; font-size: 12px;'>0.094</div
+        ><div id='_tp_ushvzlqmsjqytmzldeph_ind_1'
+            style='display: inline; background: rgba(255.0, 13.0, 87.0, 0.5822142998613588); border-radius: 3px; padding: 0px'
+            onclick="
+            if (this.previousSibling.style.display == 'none') {
+                this.previousSibling.style.display = 'block';
+                this.parentNode.style.display = 'inline-block';
+            } else {
+                this.previousSibling.style.display = 'none';
+                this.parentNode.style.display = 'inline';
+            }"
+            onmouseover="document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_1').style.opacity = 1; document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_1').style.opacity = 1;"
+            onmouseout="document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_1').style.opacity = 0; document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_1').style.opacity = 0;"
+        >ने </div></div><div style='display: inline; text-align: center;'
+    ><div style='display: none; color: #999; padding-top: 0px; font-size: 12px;'>0.161</div
+        ><div id='_tp_ushvzlqmsjqytmzldeph_ind_2'
+            style='display: inline; background: rgba(255.0, 13.0, 87.0, 1.0); border-radius: 3px; padding: 0px'
+            onclick="
+            if (this.previousSibling.style.display == 'none') {
+                this.previousSibling.style.display = 'block';
+                this.parentNode.style.display = 'inline-block';
+            } else {
+                this.previousSibling.style.display = 'none';
+                this.parentNode.style.display = 'inline';
+            }"
+            onmouseover="document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_2').style.opacity = 1; document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_2').style.opacity = 1;"
+            onmouseout="document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_2').style.opacity = 0; document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_2').style.opacity = 0;"
+        >आज </div></div><div style='display: inline; text-align: center;'
+    ><div style='display: none; color: #999; padding-top: 0px; font-size: 12px;'>0.059 / 2</div
+        ><div id='_tp_ushvzlqmsjqytmzldeph_ind_3'
+            style='display: inline; background: rgba(255.0, 13.0, 87.0, 0.3693800752624282); border-radius: 3px; padding: 0px'
+            onclick="
+            if (this.previousSibling.style.display == 'none') {
+                this.previousSibling.style.display = 'block';
+                this.parentNode.style.display = 'inline-block';
+            } else {
+                this.previousSibling.style.display = 'none';
+                this.parentNode.style.display = 'inline';
+            }"
+            onmouseover="document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_3').style.opacity = 1; document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_3').style.opacity = 1;"
+            onmouseout="document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_3').style.opacity = 0; document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_3').style.opacity = 0;"
+        >नई शिक्षा </div></div><div style='display: inline; text-align: center;'
+    ><div style='display: none; color: #999; padding-top: 0px; font-size: 12px;'>0.069 / 2</div
+        ><div id='_tp_ushvzlqmsjqytmzldeph_ind_4'
+            style='display: inline; background: rgba(255.0, 13.0, 87.0, 0.4245593186769657); border-radius: 3px; padding: 0px'
+            onclick="
+            if (this.previousSibling.style.display == 'none') {
+                this.previousSibling.style.display = 'block';
+                this.parentNode.style.display = 'inline-block';
+            } else {
+                this.previousSibling.style.display = 'none';
+                this.parentNode.style.display = 'inline';
+            }"
+            onmouseover="document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_4').style.opacity = 1; document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_4').style.opacity = 1;"
+            onmouseout="document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_4').style.opacity = 0; document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_4').style.opacity = 0;"
+        >नीति की </div></div><div style='display: inline; text-align: center;'
+    ><div style='display: none; color: #999; padding-top: 0px; font-size: 12px;'>0.044 / 2</div
+        ><div id='_tp_ushvzlqmsjqytmzldeph_ind_5'
+            style='display: inline; background: rgba(255.0, 13.0, 87.0, 0.2747870865517925); border-radius: 3px; padding: 0px'
+            onclick="
+            if (this.previousSibling.style.display == 'none') {
+                this.previousSibling.style.display = 'block';
+                this.parentNode.style.display = 'inline-block';
+            } else {
+                this.previousSibling.style.display = 'none';
+                this.parentNode.style.display = 'inline';
+            }"
+            onmouseover="document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_5').style.opacity = 1; document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_5').style.opacity = 1;"
+            onmouseout="document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_5').style.opacity = 0; document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_5').style.opacity = 0;"
+        >घोषणा की</div></div><div style='display: inline; text-align: center;'
+    ><div style='display: none; color: #999; padding-top: 0px; font-size: 12px;'>-0.001 / 2</div
+        ><div id='_tp_ushvzlqmsjqytmzldeph_ind_6'
+            style='display: inline; background: rgba(30.0, 136.0, 229.0, 0.006773618538324436); border-radius: 3px; padding: 0px'
+            onclick="
+            if (this.previousSibling.style.display == 'none') {
+                this.previousSibling.style.display = 'block';
+                this.parentNode.style.display = 'inline-block';
+            } else {
+                this.previousSibling.style.display = 'none';
+                this.parentNode.style.display = 'inline';
+            }"
+            onmouseover="document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_6').style.opacity = 1; document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_6').style.opacity = 1;"
+            onmouseout="document.getElementById('_fb_ushvzlqmsjqytmzldeph_ind_6').style.opacity = 0; document.getElementById('_fs_ushvzlqmsjqytmzldeph_ind_6').style.opacity = 0;"
+        >।</div></div></div>
+    </div>
+</div>
+</body>
+</html>

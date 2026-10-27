@@ -1,4 +1,6 @@
-dataset/
-__pycache__/
 .venv/
 Lib/
+Scripts/
+__pycache__/
+*.py[cod]
+.env
