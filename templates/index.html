@@ -1,710 +1,144 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#10243e">
-
-    <title>TruthLens | AI-Powered News Verification</title>
-    <meta name="description"
-          content="Analyze news with machine learning and understand predictions with LIME and SHAP explanations.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
-
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1b38">
+  <title>TruthLens — AI-Powered News Verification</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
-
 <body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="TruthLens home">
+      <span class="brand-mark"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 42 10v13c0 11-7 18-18 22C13 41 6 34 6 23V10L24 3Z" fill="currentColor" opacity=".18"/><path d="M24 4 40 10v13c0 10-6 17-16 21C14 40 8 33 8 23V10L24 4Z" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="22" cy="21" r="8" fill="none" stroke="currentColor" stroke-width="3"/><path d="m28 27 8 8" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></span>
+      <span class="brand-copy"><strong>Truth<span>Lens</span></strong><small>AI-POWERED NEWS VERIFICATION</small></span>
+    </a>
+    <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a class="active" href="#home">Home</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#why-truthlens">Why TruthLens</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#team">Team</a>
+      <a class="nav-cta" href="#analyze">✦ Analyze News <span>→</span></a>
+    </nav>
+  </header>
 
-    <!-- Utility bar -->
-    <div class="utility-bar">
-        <div class="utility-inner">
-            <div class="utility-contact">
-                <span>◉</span>
-                <span>AI for a more informed society</span>
-            </div>
-
-            <div class="utility-links">
-                <a href="#why-it-matters">Our mission</a>
-                <span class="utility-divider">|</span>
-                <a href="#how-it-works">How it works</a>
-                <span class="utility-divider">|</span>
-                <a href="#contact">Contact</a>
-            </div>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> AI-POWERED FACT-CHECKING</div>
+        <h1>Don't Just Read.<br><span>Verify.</span></h1>
+        <p>TruthLens uses AI, machine learning, and real-world sources to help you identify questionable news, understand why, and make better decisions.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#analyze"><span>⌕</span> Analyze News <b>→</b></a>
+          <a class="button button-glass" href="#how-it-works"><span>▶</span> Learn How It Works</a>
         </div>
-    </div>
-
-    <!-- Main navigation -->
-    <header class="navbar">
-        <div class="nav-inner">
-
-            <a href="/" class="brand" aria-label="TruthLens home">
-                <span class="brand-mark" aria-hidden="true">
-                    <svg viewBox="0 0 48 48" fill="none">
-                        <circle cx="20" cy="19" r="12"
-                                stroke="currentColor" stroke-width="4"/>
-                        <path d="M29 28L41 40"
-                              stroke="currentColor" stroke-width="5"
-                              stroke-linecap="round"/>
-                        <path d="M14 19L18 23L26 14"
-                              stroke="#0B74F5" stroke-width="3"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"/>
-                        <path d="M6 8H16M4 13H11"
-                              stroke="#F59E0B" stroke-width="3"
-                              stroke-linecap="round"/>
-                    </svg>
-                </span>
-
-                <span class="brand-copy">
-                    <span class="brand-name">Truth<span>Lens</span></span>
-                    <span class="brand-tagline">AI-POWERED NEWS VERIFICATION</span>
-                </span>
-            </a>
-
-            <button class="mobile-menu-button"
-                    id="mobile-menu-button"
-                    type="button"
-                    aria-label="Toggle navigation"
-                    aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <nav class="nav-links" id="nav-links">
-                <a class="nav-link active" href="#home">Home</a>
-                <a class="nav-link" href="#how-it-works">How It Works</a>
-                <a class="nav-link" href="#why-it-matters">Why TruthLens</a>
-                <a class="nav-link" href="#features">Features</a>
-                <a class="nav-link" href="#contact">About</a>
-            </nav>
-
-            <a class="button button-primary nav-cta" href="#analyzer">
-                Analyze News <span aria-hidden="true">→</span>
-            </a>
-
+        <div class="hero-features">
+          <div class="hero-feature"><span class="mini-icon blue">♧</span><span><b>SVM Classification</b><small>Detect fake or real news</small></span></div>
+          <div class="hero-feature"><span class="mini-icon violet">▤</span><span><b>LIME Explanation</b><small>Understand key words</small></span></div>
+          <div class="hero-feature"><span class="mini-icon pink">▥</span><span><b>SHAP Analysis</b><small>Deep model insights</small></span></div>
+          <div class="hero-feature"><span class="mini-icon cyan">✦</span><span><b>Gemini Fact-Check</b><small>Verify with real sources</small></span></div>
         </div>
-    </header>
+      </div>
+      <aside class="truth-card">
+        <div class="card-kicker"><span>✦</span> THE TRUTH MATTERS</div>
+        <h2>Pause. Check. Share responsibly.</h2>
+        <p>In a world of information overload, TruthLens helps you investigate what may be real and what needs a closer look.</p>
+        <a href="#why-truthlens">Why verification matters <span>→</span></a>
+      </aside>
+      <div class="hero-caption"><span></span> CLEARER INSIGHTS. SMARTER DECISIONS.</div>
+    </section>
 
-
-    <main>
-
-        <!-- Hero -->
-        <section class="hero" id="home">
-            <div class="hero-background"></div>
-            <div class="hero-overlay"></div>
-
-            <div class="hero-inner">
-
-                <div class="hero-copy">
-                    <div class="hero-eyebrow">
-                        <span class="eyebrow-dot"></span>
-                        A STEP TOWARDS A MORE INFORMED SOCIETY
-                    </div>
-
-                    <h1>
-                        Don’t Just Read.<br>
-                        <span>Verify.</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        Analyze news with machine learning and get clear
-                        explanations of why an article may be classified
-                        as real or fake. Think critically before you share.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a href="#analyzer" class="button button-primary">
-                            Analyze News <span aria-hidden="true">→</span>
-                        </a>
-
-                        <a href="#how-it-works" class="button button-outline">
-                            <span class="play-icon" aria-hidden="true">▶</span>
-                            Learn More
-                        </a>
-                    </div>
-
-                    <div class="hero-benefits">
-                        <div class="hero-benefit">
-                            <span class="benefit-icon benefit-blue">✳</span>
-                            <span><strong>AI-powered</strong><small>Detection</small></span>
-                        </div>
-
-                        <div class="hero-benefit">
-                            <span class="benefit-icon benefit-green">✓</span>
-                            <span><strong>Explainable</strong><small>LIME &amp; SHAP</small></span>
-                        </div>
-
-                        <div class="hero-benefit">
-                            <span class="benefit-icon benefit-purple">◎</span>
-                            <span><strong>Responsible</strong><small>News sharing</small></span>
-                        </div>
-                    </div>
-                </div>
-
-                <aside class="hero-insight">
-                    <div class="insight-top">
-                        <span class="insight-icon">✦</span>
-                        <span>THE TRUTH MATTERS</span>
-                    </div>
-                    <h2>Pause. Check. Share responsibly.</h2>
-                    <p>
-                        A prediction is a starting point. Always verify
-                        important claims using reliable sources.
-                    </p>
-                    <a href="#why-it-matters">
-                        Why verification matters <span>→</span>
-                    </a>
-                </aside>
-
+    <section class="workspace-section" id="analyze">
+      <div class="workspace-grid">
+        <section class="panel analysis-panel">
+          <div class="section-heading">
+            <span class="heading-icon">☷</span>
+            <div><span class="section-kicker">START YOUR ANALYSIS</span><h2>What have you heard?</h2><p>Paste a headline and article to see what the model finds.</p></div>
+          </div>
+          {% if error %}<div class="alert alert-error" role="alert">{{ error }}</div>{% endif %}
+          <form method="POST" action="/" id="newsForm">
+            <div class="input-grid">
+              <div class="field-group">
+                <label for="title"><span>▤</span> News Headline</label>
+                <input id="title" name="title" type="text" maxlength="200" minlength="5" placeholder="e.g. India's Constitution Came into Effect on 26 January 1950..." value="{{ title or '' }}" required>
+                <div class="field-meta"><span>A clear headline works best.</span><span><b id="titleCount">{{ (title or '')|length }}</b>/200</span></div>
+              </div>
+              <div class="field-group">
+                <label for="text"><span>▤</span> News Article or Message</label>
+                <textarea id="text" name="text" maxlength="5000" minlength="30" rows="4" placeholder="Paste the full news article or message here (at least 30 characters)..." required>{{ text or '' }}</textarea>
+                <div class="field-meta"><span>Include the details you want to check.</span><span><b id="textCount">{{ (text or '')|length }}</b>/5000</span></div>
+              </div>
             </div>
-
-            <div class="hero-bottom-label">
-                <span></span> CLEARER INSIGHTS. SMARTER DECISIONS.
-            </div>
+            <div class="form-actions"><button class="button button-primary analyze-button" type="submit"><span>⌕</span> Analyze News <b>→</b></button><button class="button button-light" type="button" id="clearForm">↻ &nbsp; Clear</button></div>
+            <p class="privacy-note">Your result is an aid to critical thinking, not a substitute for checking reliable sources.</p>
+          </form>
         </section>
 
-
-        <!-- News analysis form -->
-        <section class="analyzer-wrap" id="analyzer">
-
-            <div class="analyzer-card">
-
-                <div class="analyzer-heading">
-                    <div class="analyzer-heading-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M4 5H20M4 12H20M4 19H20"
-                                  stroke="currentColor" stroke-width="2"
-                                  stroke-linecap="round"/>
-                            <circle cx="8" cy="5" r="2"
-                                    fill="white" stroke="currentColor"
-                                    stroke-width="2"/>
-                            <circle cx="16" cy="12" r="2"
-                                    fill="white" stroke="currentColor"
-                                    stroke-width="2"/>
-                            <circle cx="10" cy="19" r="2"
-                                    fill="white" stroke="currentColor"
-                                    stroke-width="2"/>
-                        </svg>
-                    </div>
-
-                    <div>
-                        <p class="section-kicker">START YOUR ANALYSIS</p>
-                        <h2>What have you heard?</h2>
-                        <p class="analyzer-subtitle">
-                            Enter the headline and article to see what the model finds.
-                        </p>
-                    </div>
-                </div>
-
-                {% if error %}
-                <div class="error-message" role="alert">
-                    <strong>We couldn’t analyze this article</strong>
-                    <p>{{ error }}</p>
-                </div>
-                {% endif %}
-
-                <form method="POST" action="#analyzer" id="news-form">
-
-                    <div class="form-grid">
-
-                        <div class="form-group">
-                            <label for="title">
-                                <span class="field-icon" aria-hidden="true">▤</span>
-                                News headline
-                            </label>
-
-                            <input
-                                type="text"
-                                id="title"
-                                name="title"
-                                placeholder="Enter the news headline..."
-                                value="{{ title or '' }}"
-                                minlength="5"
-                                maxlength="300"
-                                required
-                            >
-
-                            <div class="field-help">
-                                <span>A clear headline works best.</span>
-                                <span>Min. 5 characters</span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="text">
-                                <span class="field-icon" aria-hidden="true">▤</span>
-                                News article or message
-                            </label>
-
-                            <textarea
-                                id="text"
-                                name="text"
-                                placeholder="Paste the article or message you want to analyze..."
-                                minlength="30"
-                                maxlength="5000"
-                                rows="4"
-                                required
-                            >{{ text or '' }}</textarea>
-
-                            <div class="field-help">
-                                <span>Include as much relevant context as possible.</span>
-                                <span><span id="character-count">0</span>/5000</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="analyzer-submit-row">
-                        <p class="privacy-note">
-                            <span aria-hidden="true">ⓘ</span>
-                            Automated predictions can be wrong. Verify important claims independently.
-                        </p>
-
-                        <button type="submit" class="button button-primary analyze-button"
-                                id="analyze-button">
-                            <span class="button-search-icon" aria-hidden="true">⌕</span>
-                            Analyze News
-                            <span aria-hidden="true">→</span>
-                        </button>
-                    </div>
-
-                </form>
-
-            </div>
-        </section>
-
-
-        <!-- Prediction result -->
-        {% if prediction is not none %}
-
-        <section class="results-section page-section" id="results">
-
-            <div class="section-title-row">
-                <div>
-                    <p class="section-kicker">YOUR ANALYSIS</p>
-                    <h2>Here’s what the model found</h2>
-                    <p class="section-description">
-                        Review the result and the words that influenced the model.
-                    </p>
-                </div>
-
-                <a href="#analyzer" class="text-link">Analyze another article ↗</a>
-            </div>
-
-            <div class="result-card">
-
-                <div class="result-main">
-                    <div class="result-status-icon
-                        {% if prediction == 'FAKE NEWS' %}
-                            status-fake
-                        {% elif prediction == 'REAL NEWS' %}
-                            status-real
-                        {% else %}
-                            status-neutral
-                        {% endif %}">
-                        {% if prediction == 'FAKE NEWS' %}
-                            !
-                        {% elif prediction == 'REAL NEWS' %}
-                            ✓
-                        {% else %}
-                            i
-                        {% endif %}
-                    </div>
-
-                    <div class="result-copy">
-                        <p class="result-overline">MODEL CLASSIFICATION</p>
-                        <h3>{{ prediction }}</h3>
-                        <p>
-                            {% if prediction == 'FAKE NEWS' %}
-                                The model classified this content as potentially fake.
-                            {% elif prediction == 'REAL NEWS' %}
-                                The model classified this content as real.
-                            {% else %}
-                                Review this result carefully.
-                            {% endif %}
-                        </p>
-                    </div>
-                </div>
-
-                {% if confidence is not none %}
-                <div class="confidence-box">
-                    <div class="confidence-heading">
-                        <span>Model confidence</span>
-                        <strong>{{ confidence }}%</strong>
-                    </div>
-
-                    <div class="progress-track">
-                        <div class="progress-fill
-                            {% if prediction == 'FAKE NEWS' %}
-                                progress-fake
-                            {% else %}
-                                progress-real
-                            {% endif %}"
-                            style="width: {{ confidence }}%;">
-                        </div>
-                    </div>
-
-                    <p>
-                        Confidence is not a measure of factual accuracy.
-                    </p>
-                </div>
-                {% endif %}
-
-            </div>
-
-
-            <!-- LIME explanation -->
-            {% if explanation %}
-            <section class="explanation-panel">
-
-                <div class="explanation-heading">
-                    <div class="explanation-symbol lime-symbol">L</div>
-                    <div>
-                        <p class="section-kicker">LOCAL EXPLANATION</p>
-                        <h3>What influenced this prediction?</h3>
-                        <p>
-                            LIME highlights words that influence the model's
-                            classification for this particular article.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="contribution-list">
-                    {% for item in explanation %}
-                    <div class="contribution-row">
-                        <span class="contribution-word">{{ item.word }}</span>
-
-                        <span class="contribution-direction
-                            {% if item.weight > 0 %}
-                                contribution-positive
-                            {% else %}
-                                contribution-negative
-                            {% endif %}">
-                            {{ item.direction }}
-                        </span>
-
-                        <span class="contribution-weight">
-                            {{ "%+.4f"|format(item.weight) }}
-                        </span>
-                    </div>
-                    {% endfor %}
-                </div>
-
-                <p class="explanation-note">
-                    LIME explains local model behavior; it does not verify
-                    the claims in the article.
-                </p>
-
-            </section>
-            {% endif %}
-
-
-            <!-- SHAP explanation -->
-            {% if shap_explanation %}
-            <section class="explanation-panel">
-
-                <div class="explanation-heading">
-                    <div class="explanation-symbol shap-symbol">S</div>
-                    <div>
-                        <p class="section-kicker">FEATURE CONTRIBUTIONS</p>
-                        <h3>Understand the model's reasoning</h3>
-                        <p>
-                            SHAP estimates how individual words contribute
-                            to the selected model output.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="contribution-list">
-                    {% for item in shap_explanation %}
-                    <div class="contribution-row">
-                        <span class="contribution-word">{{ item.word }}</span>
-
-                        <span class="contribution-direction
-                            {% if item.weight > 0 %}
-                                contribution-positive
-                            {% else %}
-                                contribution-negative
-                            {% endif %}">
-                            {{ item.direction }}
-                        </span>
-
-                        <span class="contribution-weight">
-                            {{ "%+.5f"|format(item.weight) }}
-                        </span>
-                    </div>
-                    {% endfor %}
-                </div>
-
-                <p class="explanation-note">
-                    SHAP contributions are relative to the model's baseline
-                    and selected output. They are not proof that a claim is true.
-                </p>
-
-            </section>
-            {% endif %}
-
-            <div class="verification-reminder">
-                <span class="reminder-icon">i</span>
-                <div>
-                    <strong>Before you share</strong>
-                    <p>
-                        Check the original source, publication date, supporting
-                        evidence, and independent reporting. No automated
-                        classification should be treated as definitive proof.
-                    </p>
-                </div>
-            </div>
-
-        </section>
-
-        {% endif %}
-
-
-        <!-- Feature highlights -->
-        <section class="feature-strip" id="features">
-            <div class="feature-strip-inner">
-
-                <div class="mini-feature">
-                    <span class="mini-feature-icon icon-blue">✳</span>
-                    <div>
-                        <h3>AI-powered detection</h3>
-                        <p>Machine-learning classification</p>
-                    </div>
-                </div>
-
-                <div class="mini-feature">
-                    <span class="mini-feature-icon icon-purple">⌘</span>
-                    <div>
-                        <h3>Explainable results</h3>
-                        <p>LIME and SHAP insights</p>
-                    </div>
-                </div>
-
-                <div class="mini-feature">
-                    <span class="mini-feature-icon icon-green">✓</span>
-                    <div>
-                        <h3>Responsible insights</h3>
-                        <p>Context over assumptions</p>
-                    </div>
-                </div>
-
-                <div class="mini-feature">
-                    <span class="mini-feature-icon icon-orange">↗</span>
-                    <div>
-                        <h3>Simple to use</h3>
-                        <p>Clear, focused workflow</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- How it works -->
-        <section class="page-section how-section" id="how-it-works">
-
-            <div class="section-title-row">
-                <div>
-                    <p class="section-kicker">HOW IT WORKS</p>
-                    <h2>Three steps to a clearer picture</h2>
-                    <p class="section-description">
-                        A simple process to help you examine news more critically.
-                    </p>
-                </div>
-            </div>
-
-            <div class="steps-grid">
-
-                <article class="step-card">
-                    <span class="step-number">01</span>
-                    <div class="step-card-icon">▤</div>
-                    <h3>Submit the article</h3>
-                    <p>
-                        Enter a headline and the news text you want the model to analyze.
-                    </p>
-                </article>
-
-                <article class="step-card">
-                    <span class="step-number">02</span>
-                    <div class="step-card-icon">✳</div>
-                    <h3>Get a prediction</h3>
-                    <p>
-                        The configured machine-learning model classifies the submitted text.
-                    </p>
-                </article>
-
-                <article class="step-card">
-                    <span class="step-number">03</span>
-                    <div class="step-card-icon">⌕</div>
-                    <h3>Explore the explanation</h3>
-                    <p>
-                        Review LIME and SHAP contributions, then independently check the facts.
-                    </p>
-                </article>
-
-            </div>
-        </section>
-
-
-        <!-- Why it matters -->
-        <section class="why-section" id="why-it-matters">
-            <div class="why-inner">
-
-                <div class="why-copy">
-                    <p class="section-kicker">WHY IT MATTERS</p>
-                    <h2>
-                        Trusted information starts with
-                        <span>critical thinking.</span>
-                    </h2>
-                    <p>
-                        Misleading content can spread quickly. TruthLens is
-                        designed to make model predictions easier to understand
-                        and encourage people to question, investigate, and verify
-                        before sharing.
-                    </p>
-                    <a href="#analyzer" class="button button-primary">
-                        Try the analyzer <span>→</span>
-                    </a>
-                </div>
-
-                <div class="why-cards">
-                    <article class="why-card">
-                        <span class="why-card-icon why-red">01</span>
-                        <h3>Spot potential misinformation</h3>
-                        <p>Use a model prediction as one signal for further checking.</p>
-                    </article>
-
-                    <article class="why-card">
-                        <span class="why-card-icon why-blue">02</span>
-                        <h3>Understand word contributions</h3>
-                        <p>Explore which features influenced the model's output.</p>
-                    </article>
-
-                    <article class="why-card">
-                        <span class="why-card-icon why-green">03</span>
-                        <h3>Build critical thinking</h3>
-                        <p>Look for evidence instead of relying on a headline alone.</p>
-                    </article>
-
-                    <article class="why-card">
-                        <span class="why-card-icon why-purple">04</span>
-                        <h3>Designed for everyone</h3>
-                        <p>A straightforward experience for students and readers.</p>
-                    </article>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- Footer -->
-        <footer class="footer" id="contact">
-            <div class="footer-inner">
-
-                <div class="footer-brand">
-                    <a href="/" class="brand footer-brand-link">
-                        <span class="brand-mark" aria-hidden="true">
-                            <svg viewBox="0 0 48 48" fill="none">
-                                <circle cx="20" cy="19" r="12"
-                                        stroke="currentColor" stroke-width="4"/>
-                                <path d="M29 28L41 40"
-                                      stroke="currentColor" stroke-width="5"
-                                      stroke-linecap="round"/>
-                                <path d="M14 19L18 23L26 14"
-                                      stroke="#0B74F5" stroke-width="3"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"/>
-                            </svg>
-                        </span>
-                        <span class="brand-copy">
-                            <span class="brand-name">Truth<span>Lens</span></span>
-                            <span class="brand-tagline">AI-POWERED NEWS VERIFICATION</span>
-                        </span>
-                    </a>
-
-                    <p>
-                        Helping people examine news with greater care,
-                        transparency, and critical thinking.
-                    </p>
-                </div>
-
-                <div class="footer-links">
-                    <h3>Explore</h3>
-                    <a href="#home">Home</a>
-                    <a href="#analyzer">Analyze news</a>
-                    <a href="#how-it-works">How it works</a>
-                    <a href="#features">Features</a>
-                </div>
-
-                <div class="footer-links">
-                    <h3>Our approach</h3>
-                    <a href="#why-it-matters">Why verification matters</a>
-                    <a href="#results">Model explanations</a>
-                    <a href="#contact">About TruthLens</a>
-                </div>
-
-            </div>
-
-            <div class="footer-bottom">
-                <p>© 2026 TruthLens. AI-assisted news analysis.</p>
-                <p>Think critically. Verify independently. Share responsibly.</p>
-            </div>
-        </footer>
-
-    </main>
-
-
-    <script>
-        // Mobile navigation
-        const menuButton = document.getElementById("mobile-menu-button");
-        const navLinks = document.getElementById("nav-links");
-
-        menuButton.addEventListener("click", function () {
-            const isOpen = navLinks.classList.toggle("nav-open");
-            menuButton.setAttribute("aria-expanded", String(isOpen));
-        });
-
-        navLinks.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", function () {
-                navLinks.classList.remove("nav-open");
-                menuButton.setAttribute("aria-expanded", "false");
-            });
-        });
-
-        // Article character count
-        const articleInput = document.getElementById("text");
-        const characterCount = document.getElementById("character-count");
-        const newsForm = document.getElementById("news-form");
-        const analyzeButton = document.getElementById("analyze-button");
-
-        function updateCharacterCount() {
-            characterCount.textContent = articleInput.value.length;
-        }
-
-        updateCharacterCount();
-        articleInput.addEventListener("input", updateCharacterCount);
-
-        newsForm.addEventListener("submit", function () {
-            if (newsForm.checkValidity()) {
-                analyzeButton.disabled = true;
-                analyzeButton.querySelector("span:nth-child(2)").textContent =
-                    "Analyzing...";
-            }
-        });
-    </script>
-
+        <aside class="panel glance-panel" id="features">
+          <div class="glance-title"><span>✦</span> TRUTHLENS AT A GLANCE</div>
+          <div class="glance-grid">
+            <article class="glance-card"><span class="glance-icon shield">⬡</span><div><h3>SVM Classification</h3><p>Detect fake or real news using your trained model.</p></div></article>
+            <article class="glance-card"><span class="glance-icon bulb">♧</span><div><h3>LIME Explanation</h3><p>See which words influenced the prediction.</p></div></article>
+            <article class="glance-card"><span class="glance-icon network">✣</span><div><h3>SHAP Analysis</h3><p>Understand model behavior in greater depth.</p></div></article>
+            <article class="glance-card"><span class="glance-icon sparkle">✦</span><div><h3>Gemini Fact-Check</h3><p>Investigate claims with search-grounded evidence when available.</p></div></article>
+          </div>
+        </aside>
+      </div>
+
+      {% if prediction %}
+      <section class="results-section" id="results">
+        <div class="results-heading"><div><span class="section-kicker">YOUR ANALYSIS</span><h2>Prediction Results</h2><p>Review the model output alongside the explanations and available evidence.</p></div><span class="result-tag">Analysis complete</span></div>
+        <div class="result-top-grid">
+          <article class="result-card prediction-card {% if prediction == 'REAL NEWS' %}real-result{% else %}fake-result{% endif %}">
+            <div class="result-main"><span class="result-symbol">{% if prediction == 'REAL NEWS' %}✓{% else %}!{% endif %}</span><div><span class="result-label">SVM CLASSIFICATION</span><h3>{{ prediction }}</h3><p>Classification from your existing trained machine-learning model.</p></div></div>
+            <div class="confidence-row"><span>Model confidence</span><strong>{{ confidence }}%</strong></div><div class="progress-track"><span style="width: {{ confidence }}%"></span></div>
+          </article>
+          <article class="result-card probability-card"><div class="result-card-title"><span class="small-heading-icon">▥</span><h3>Probability Breakdown</h3></div>
+            <div class="probability-row"><div class="prob-label"><i class="dot dot-red"></i>Fake News <strong>{{ fake_percentage if fake_percentage is not none else '—' }}{% if fake_percentage is not none %}%{% endif %}</strong></div><div class="progress-track red-track"><span style="width: {{ fake_percentage if fake_percentage is not none else 0 }}%"></span></div></div>
+            <div class="probability-row"><div class="prob-label"><i class="dot dot-green"></i>Real News <strong>{{ real_percentage if real_percentage is not none else '—' }}{% if real_percentage is not none %}%{% endif %}</strong></div><div class="progress-track green-track"><span style="width: {{ real_percentage if real_percentage is not none else 0 }}%"></span></div></div>
+            <p class="micro-note">These percentages come from the SVM model. They are not independent proof of whether a story is true.</p>
+          </article>
+        </div>
+        <div class="explanation-grid">
+          <article class="result-card explanation-card lime-card"><div class="result-card-title"><span class="small-heading-icon">♧</span><div><h3>LIME Explanation</h3><p>Words influencing the prediction</p></div></div>
+            {% if explanation %}<div class="word-list">{% for item in explanation %}<div class="word-row"><span class="word-chip {% if item.weight > 0 %}word-positive{% else %}word-negative{% endif %}">{{ item.word }}</span><span class="word-weight">{{ '%+.4f'|format(item.weight) }}</span><span class="word-bar"><i class="{% if item.weight > 0 %}bar-positive{% else %}bar-negative{% endif %}" style="width: {{ [((item.weight|abs) * 300), 100]|min }}%"></i></span></div>{% endfor %}</div>{% else %}<p class="empty-state">LIME explanation is not available for this result.</p>{% endif %}
+          </article>
+          <article class="result-card explanation-card shap-card"><div class="result-card-title"><span class="small-heading-icon">▥</span><div><h3>SHAP Analysis</h3><p>Feature importance from SHAP values</p></div></div>
+            {% if shap_explanation %}<div class="word-list">{% for item in shap_explanation %}<div class="word-row"><span class="word-chip {% if item.weight > 0 %}word-positive{% else %}word-negative{% endif %}">{{ item.word }}</span><span class="word-weight">{{ '%+.5f'|format(item.weight) }}</span><span class="word-bar"><i class="{% if item.weight > 0 %}bar-positive{% else %}bar-negative{% endif %}" style="width: {{ [((item.weight|abs) * 1500), 100]|min }}%"></i></span></div>{% endfor %}</div>{% else %}<p class="empty-state">SHAP explanation is unavailable for this result.</p>{% endif %}
+          </article>
+          <article class="result-card gemini-card"><div class="result-card-title"><span class="small-heading-icon">✦</span><div><h3>Gemini AI Fact-Check</h3><p>Additional assessment, separate from SVM</p></div><span class="powered-pill">AI analysis</span></div>
+            <div class="gemini-output">{% if gemini_analysis %}{{ gemini_analysis }}{% else %}Gemini analysis was not returned for this submission.{% endif %}</div>
+            <div class="gemini-disclaimer">Gemini's verdict and any AI assessment scores are not calibrated probabilities. Review cited sources and independently verify important claims.</div>
+          </article>
+        </div>
+      </section>
+      {% endif %}
+    </section>
+
+    <section class="value-strip" id="why-truthlens">
+      <article><span class="value-icon value-green">✓</span><div><h3>Real News</h3><p>Supported by credible evidence.</p></div></article>
+      <article><span class="value-icon value-red">!</span><div><h3>Fake News</h3><p>Claims contradicted by evidence.</p></div></article>
+      <article><span class="value-icon value-blue">▤</span><div><h3>Evidence-Based Analysis</h3><p>AI insights plus source review.</p></div></article>
+      <article><span class="value-icon value-purple">⬡</span><div><h3>A Safer Information World</h3><p>Think critically before sharing.</p></div></article>
+    </section>
+
+    <section class="how-section" id="how-it-works"><div class="center-heading"><span class="section-kicker">A SIMPLE PROCESS</span><h2>How TruthLens Works</h2><p>Multiple perspectives help you investigate a story more thoughtfully.</p></div>
+      <div class="steps-grid"><article class="step-card"><span>01</span><h3>Submit the news</h3><p>Enter the headline and article text you want to investigate.</p></article><article class="step-card"><span>02</span><h3>AI analysis</h3><p>The SVM model classifies text while LIME and SHAP explain its output.</p></article><article class="step-card"><span>03</span><h3>Review evidence</h3><p>Gemini can search for supporting or contradicting sources when configured.</p></article><article class="step-card"><span>04</span><h3>Decide responsibly</h3><p>Read the explanations and verify important claims before sharing.</p></article></div>
+    </section>
+
+    <section class="about-section" id="about"><div><span class="section-kicker">ABOUT THE PROJECT</span><h2>Clarity over clicks.</h2></div><p>TruthLens is an educational fake-news detection project combining machine learning, explainable AI, and AI-assisted claim investigation. Predictions can be wrong, so evidence and human judgment remain essential.</p></section>
+    <section class="team-section" id="team"><span class="section-kicker">BUILT FOR DIGITAL LITERACY</span><h2>Think critically. Share responsibly.</h2><p>Understand the prediction, question the evidence, and make an informed decision.</p><a class="button button-primary" href="#analyze">Start Analyzing <b>→</b></a></section>
+  </main>
+
+  <footer class="site-footer"><a class="footer-brand" href="#home">Truth<span>Lens</span></a><p>AI-powered news verification · Detect · Explain · Verify</p><a href="#home">Back to top ↑</a></footer>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
-
-
-
-
-
